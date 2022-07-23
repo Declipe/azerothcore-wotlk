@@ -29,6 +29,15 @@ void ScriptMgr::OnCreatureAddWorld(Creature* creature)
     });
 }
 
+void ScriptMgr::AllCreatureJustDied(Creature* creature)
+{
+	ASSERT(creature);
+	ExecuteScript<AllCreatureScript>([&](AllCreatureScript* script)
+    {
+         script->AllCreatureJustDied(creature);
+    });
+}
+
 void ScriptMgr::OnCreatureRemoveWorld(Creature* creature)
 {
     ASSERT(creature);

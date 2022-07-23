@@ -1619,6 +1619,14 @@ void ScriptMgr::OnPlayerLeaveCombat(Player* player)
     });
 }
 
+void ScriptMgr::OnPlayerSkillUpdate(Player* player, uint16 SkillId, uint16 SkillValue, uint16 SkillNewValue)
+{
+	ExecuteScript<PlayerScript>([&](PlayerScript* script)
+    {
+        script->OnPlayerSkillUpdate(player, SkillId, SkillValue, SkillNewValue);
+    });
+}
+
 void ScriptMgr::OnQuestAbandon(Player* player, uint32 questId)
 {
     ExecuteScript<PlayerScript>([&](PlayerScript* script)

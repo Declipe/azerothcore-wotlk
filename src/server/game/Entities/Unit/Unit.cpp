@@ -18201,6 +18201,9 @@ void Unit::Kill(Unit* killer, Unit* victim, bool durabilityLoss, WeaponAttackTyp
             ai->JustDied(killer);
         }
 
+        if (creature)
+           sScriptMgr->AllCreatureJustDied(creature);
+
         if (TempSummon* summon = creature->ToTempSummon())
         {
             if (WorldObject* summoner = summon->GetSummoner())
