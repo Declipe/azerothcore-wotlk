@@ -560,6 +560,7 @@ public: /* AllCreatureScript */
     void OnBeforeCreatureSelectLevel(const CreatureTemplate* cinfo, Creature* creature, uint8& level);
     void Creature_SelectLevel(const CreatureTemplate* cinfo, Creature* creature);
     void AllCreatureJustDied(Creature* creature);
+    void AllCreatureCode(Player* player, Creature* creature, uint32 sender, uint32 action, const char* code);
     void OnCreatureSaveToDB(Creature* creature);
 
 public: /* AllGameobjectScript */

@@ -29,6 +29,14 @@ void ScriptMgr::OnCreatureAddWorld(Creature* creature)
     });
 }
 
+void ScriptMgr::AllCreatureCode(Player* player, Creature* creature, uint32 sender, uint32 action, const char* code)
+{
+    ExecuteScript<AllCreatureScript>([&](AllCreatureScript* script)
+        {
+            script->AllCreatureCode(player, creature, sender, action, code);
+        });
+}
+
 void ScriptMgr::AllCreatureJustDied(Creature* creature)
 {
 	ASSERT(creature);

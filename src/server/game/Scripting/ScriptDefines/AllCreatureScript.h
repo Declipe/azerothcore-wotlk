@@ -35,6 +35,7 @@ public:
     // Called from End of Creature SelectLevel.
     virtual void Creature_SelectLevel(const CreatureTemplate* /*cinfo*/, Creature* /*creature*/) { }
     virtual void AllCreatureJustDied(Creature* /*creature*/) { }
+    virtual void AllCreatureCode(Player* /*player*/, Creature* /*creature*/, uint32 /*sender*/, uint32 /*action*/, const char* /*code*/) { }
     /**
      * @brief This hook runs after add creature in world
      *
